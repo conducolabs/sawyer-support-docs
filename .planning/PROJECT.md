@@ -1,12 +1,12 @@
-# Sawyer Support Docs
+# sawyer Support Docs
 
 ## What This Is
 
-A documentation generation system that produces multilingual support articles as .md files for the Sawyer product ecosystem. It auto-scans three application codebases (mobile app, admin dashboard, API) to map existing features and detect changes, then generates structured support documentation in German (primary) with automatic translation to configured languages via DeepL. Consuming applications clone this repo and read the .md files directly.
+A documentation generation system that produces multilingual support articles as .md files for the sawyer product ecosystem. It auto-scans three application codebases (mobile app, admin dashboard, API) to map existing features and detect changes, then generates structured support documentation in German (primary) with automatic translation to configured languages via DeepL. Consuming applications clone this repo and read the .md files directly.
 
 ## Core Value
 
-End users and club admins can find clear, accurate, up-to-date support documentation in their language for every feature in the Sawyer ecosystem.
+End users admins, club admins and company admins can find clear, accurate, up-to-date support documentation in their language for every feature in the sawyer ecosystem.
 
 ## Requirements
 
@@ -49,7 +49,7 @@ End users and club admins can find clear, accurate, up-to-date support documenta
 **Product ecosystem:**
 Sawyer is a platform with three components:
 - **sawyer-mobile-app** (conducolabs/sawyer-mobile-app) — Native mobile app for end users (club members)
-- **sawyer-dashboard** (conducolabs/sawyer-dashboard-49606fd5) — Admin dashboard for club/company admins
+- **sawyer-dashboard** (conducolabs/sawyer-dashboard-49606fd5) — Admin dashboard for super admins and club/company admins
 - **projectsawyer-platform** (conducolabs/projectsawyer-platform) — Backend API/platform (context source only)
 
 The platform API is scanned for additional context (data models, endpoints) but does not receive its own support documentation — only the two frontends generate user-facing articles.
