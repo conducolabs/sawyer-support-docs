@@ -46,7 +46,12 @@ Plans:
   3. Claude Code extracts data model and endpoint context from the platform API codebase without generating articles for it
   4. Scanning produces a structured JSON feature map with stable, deterministic identifiers — running twice on unchanged code produces identical output
   5. Scanner compares against a stored snapshot and reports only changed or new features when the codebase has been modified
-**Plans**: TBD
+**Plans:** 3 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Scanner schemas, scan state persistence, and git change detection (TDD)
+- [ ] 02-02-PLAN.md — Claude Agent SDK passes, prompt templates, and scan command wiring
+- [ ] 02-03-PLAN.md — End-to-end integration test with real codebases (checkpoint)
 
 ### Phase 3: Article Generation
 **Goal**: Developer can feed a feature map into the generator and receive German-first support articles in all configured article types, written at the correct register and scoped to the right audience
@@ -89,7 +94,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete | 2026-03-12 |
-| 2. Codebase Scanner | 0/TBD | Not started | - |
+| 2. Codebase Scanner | 0/3 | Planning complete | - |
 | 3. Article Generation | 0/TBD | Not started | - |
 | 4. Translation Pipeline | 0/TBD | Not started | - |
 | 5. Pipeline Assembly and Manual Skill | 0/TBD | Not started | - |
