@@ -47,8 +47,8 @@ End users admins, club admins and company admins can find clear, accurate, up-to
 ## Context
 
 **Product ecosystem:**
-Sawyer is a platform with three components:
-- **sawyer-mobile-app** (conducolabs/sawyer-mobile-app) — Native mobile app for end users (club members)
+sawyer is a platform with three components:
+- **sawyer-mobile-app** (conducolabs/sawyer-mobile-app) — Native mobile app for end users 
 - **sawyer-dashboard** (conducolabs/sawyer-dashboard-49606fd5) — Admin dashboard for super admins and club/company admins
 - **projectsawyer-platform** (conducolabs/projectsawyer-platform) — Backend API/platform (context source only)
 
@@ -61,7 +61,7 @@ Technical support only. Users needing help with enrollment or onboarding are dir
 DeepL Pro API handles all translations. German is the source language. Translations are generated automatically but land locally for review before commit.
 
 **Consumption model:**
-Other applications in the Sawyer ecosystem clone or pull this repo and read .md files directly from the file system. No API layer involved.
+Other applications in the sawyer ecosystem clone or pull this repo and read .md files directly from the file system. No API layer involved.
 
 ## Constraints
 
