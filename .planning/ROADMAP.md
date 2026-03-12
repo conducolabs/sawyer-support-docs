@@ -12,7 +12,7 @@ A five-phase pipeline builds the multilingual documentation generation CLI from 
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation** - Config layer, shared types, file path contract, and project scaffolding
+- [x] **Phase 1: Foundation** - Config layer, shared types, file path contract, and project scaffolding
 - [ ] **Phase 2: Codebase Scanner** - Claude Code-powered feature detection from all three codebases
 - [ ] **Phase 3: Article Generation** - German-first support article authoring via Claude AI
 - [ ] **Phase 4: Translation Pipeline** - DeepL translation with hash gating and glossary integration
@@ -30,11 +30,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. A feature slug produces the same URL-safe English directory path on every run (umlaut-free, collision-detected, idempotent)
   4. All generated article files land in `docs/{lang}/{feature-area}/` directories consistent across every configured language
   5. README explains setup, CLI usage, and API key configuration so a new developer can get started without asking questions
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans executed
 
 Plans:
-- [ ] 01-01-PLAN.md — Project scaffold, config layer with Zod validation, CLI entry point with subcommand stubs
-- [ ] 01-02-PLAN.md — File path contract (slug + path builder) and comprehensive README
+- [x] 01-01-PLAN.md — Project scaffold, config layer with Zod validation, CLI entry point with subcommand stubs
+- [x] 01-02-PLAN.md — File path contract (slug + path builder) and comprehensive README
 
 ### Phase 2: Codebase Scanner
 **Goal**: CLI invokes Claude Code to analyze local repo clones and produce a structured feature map of user-facing screens and flows — leveraging Claude Code's deep code understanding instead of custom AST parsing
@@ -88,7 +88,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 1/2 | In Progress|  |
+| 1. Foundation | 2/2 | Complete | 2026-03-12 |
 | 2. Codebase Scanner | 0/TBD | Not started | - |
 | 3. Article Generation | 0/TBD | Not started | - |
 | 4. Translation Pipeline | 0/TBD | Not started | - |
