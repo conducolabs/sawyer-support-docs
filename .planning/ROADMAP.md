@@ -46,7 +46,7 @@ Plans:
   3. Claude Code extracts data model and endpoint context from the platform API codebase without generating articles for it
   4. Scanning produces a structured JSON feature map with stable, deterministic identifiers — running twice on unchanged code produces identical output
   5. Scanner compares against a stored snapshot and reports only changed or new features when the codebase has been modified
-**Plans:** 3 plans
+**Plans:** 2/3 plans executed
 
 Plans:
 - [x] 02-01-PLAN.md — Scanner schemas, scan state persistence, and git change detection (TDD)
@@ -94,7 +94,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete | 2026-03-12 |
-| 2. Codebase Scanner | 1/3 | In progress | - |
+| 2. Codebase Scanner | 2/3 | In Progress|  |
 | 3. Article Generation | 0/TBD | Not started | - |
 | 4. Translation Pipeline | 0/TBD | Not started | - |
 | 5. Pipeline Assembly and Manual Skill | 0/TBD | Not started | - |
