@@ -30,7 +30,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. A feature slug produces the same URL-safe English directory path on every run (umlaut-free, collision-detected, idempotent)
   4. All generated article files land in `docs/{lang}/{feature-area}/` directories consistent across every configured language
   5. README explains setup, CLI usage, and API key configuration so a new developer can get started without asking questions
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Project scaffold, config layer with Zod validation, CLI entry point with subcommand stubs
+- [ ] 01-02-PLAN.md — File path contract (slug + path builder) and comprehensive README
 
 ### Phase 2: Codebase Scanner
 **Goal**: CLI invokes Claude Code to analyze local repo clones and produce a structured feature map of user-facing screens and flows — leveraging Claude Code's deep code understanding instead of custom AST parsing
@@ -84,7 +88,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/2 | Planning complete | - |
 | 2. Codebase Scanner | 0/TBD | Not started | - |
 | 3. Article Generation | 0/TBD | Not started | - |
 | 4. Translation Pipeline | 0/TBD | Not started | - |
