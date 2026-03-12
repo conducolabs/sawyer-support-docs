@@ -13,3 +13,5 @@ export {
   readFeatureMap,
   writeFeatureMap,
 } from './state.js';
+
+export { getCurrentSha, getChangedFiles, needsScan } from './change-detection.js';
