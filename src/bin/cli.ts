@@ -3,6 +3,7 @@ import { Command } from 'commander';
 import { generateCommand } from '../commands/generate.js';
 import { translateCommand } from '../commands/translate.js';
 import { scanCommand } from '../commands/scan.js';
+import { runCommand } from '../commands/run.js';
 
 const program = new Command();
 
@@ -17,5 +18,6 @@ program
 program.addCommand(generateCommand);
 program.addCommand(translateCommand);
 program.addCommand(scanCommand);
+program.addCommand(runCommand);
 
 program.parse();
