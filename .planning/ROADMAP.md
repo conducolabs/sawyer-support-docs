@@ -88,11 +88,15 @@ Plans:
 **Depends on**: Phase 4
 **Requirements**: CLI-01, CLI-04, SKILL-01, SKILL-02, SKILL-03, SKILL-04
 **Success Criteria** (what must be TRUE):
-  1. Developer runs `sawyer-docs generate --mobile ./path --dashboard ./path --platform ./path` and the full pipeline executes: scan, change detect, generate, translate, write
+  1. Developer runs `sawyer-docs run --mobile ./path --dashboard ./path --platform ./path` and the full pipeline executes: scan, change detect, generate, translate, write
   2. Developer runs with `--dry-run` and sees a preview of which articles would be generated and the estimated DeepL character cost — no API calls are made
   3. Developer invokes the Claude Code Skill, describes an article topic, receives clarifying questions if needed, approves a German draft, and finds the translated article files on disk
   4. On a codebase with no changes since the last run, the pipeline reports no new articles to generate and exits without calling Claude or DeepL
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 05-01-PLAN.md — Run command: full pipeline orchestration with change detection, selective generation, and dry-run
+- [ ] 05-02-PLAN.md — Claude Code Skill: /new-article with guided prompts, approval flow, and auto-translation
 
 ## Progress
 
@@ -105,4 +109,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Codebase Scanner | 2/3 | Complete | 2026-03-12 |
 | 3. Article Generation | 2/2 | Complete   | 2026-03-12 |
 | 4. Translation Pipeline | 2/2 | Complete   | 2026-03-12 |
-| 5. Pipeline Assembly and Manual Skill | 0/TBD | Not started | - |
+| 5. Pipeline Assembly and Manual Skill | 0/2 | Not started | - |
