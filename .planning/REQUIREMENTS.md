@@ -18,12 +18,12 @@
 
 ### Codebase Scanning
 
-- [ ] **SCAN-01**: Scanner detects user-facing screens and flows from the mobile app codebase (React Native)
-- [ ] **SCAN-02**: Scanner detects user-facing screens and flows from the dashboard codebase
-- [ ] **SCAN-03**: Scanner extracts context from the platform API codebase (data models, endpoints) without generating articles for it
-- [ ] **SCAN-04**: Scanner classifies components as user-facing features vs infrastructure (filters out loading screens, nav wrappers, etc.)
-- [ ] **SCAN-05**: Scanner produces a structured feature map that feeds into article generation
-- [ ] **SCAN-06**: Scanner uses stable, deterministic identifiers for features (idempotent — rerunning produces same file names)
+- [ ] **SCAN-01**: CLI invokes Claude Code to analyze the mobile app codebase and identify user-facing screens and flows
+- [ ] **SCAN-02**: CLI invokes Claude Code to analyze the dashboard codebase and identify user-facing screens and flows
+- [ ] **SCAN-03**: CLI invokes Claude Code to extract context from the platform API codebase (data models, endpoints) without generating articles for it
+- [ ] **SCAN-04**: Claude Code classifies components as user-facing features vs infrastructure (filters out loading screens, nav wrappers, etc.)
+- [ ] **SCAN-05**: Scanning produces a structured feature map (JSON) that feeds into article generation
+- [ ] **SCAN-06**: Feature map uses stable, deterministic identifiers for features (idempotent — rerunning produces same file names)
 - [ ] **SCAN-07**: Scanner detects changed features via git diff against a stored state file, only regenerating docs for changes
 
 ### Article Generation

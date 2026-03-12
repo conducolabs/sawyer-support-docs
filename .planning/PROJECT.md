@@ -79,6 +79,7 @@ Other applications in the sawyer ecosystem clone or pull this repo and read .md 
 | Local file generation, no auto-commit | Keeps human in the loop for quality control | — Pending |
 | Platform API as context-only | API users are developers, not end users needing support docs | — Pending |
 | Minimal frontmatter (title + language) | Keep it simple, consuming apps don't need complex filtering yet | — Pending |
+| Claude Code for codebase scanning | Deep code understanding out of the box — no need to build custom AST parsers per framework | — Pending |
 
 ---
 *Last updated: 2026-03-12 after initialization*

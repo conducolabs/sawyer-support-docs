@@ -2,7 +2,7 @@
 
 ## Overview
 
-A five-phase pipeline builds the multilingual documentation generation CLI from the ground up. Phase 1 establishes the shared type system and file path contract — the public API that consuming applications depend on. Phase 2 builds the codebase scanner that produces the feature map driving all automated generation. Phase 3 constructs the article generator with German-first output and audience-aware prompt templates. Phase 4 adds the DeepL translation engine with correctness safeguards that must ship on day one. Phase 5 wires every stage into a complete CLI pipeline, adds change detection, and layers on the Claude Code Skill for manual article creation.
+A five-phase pipeline builds the multilingual documentation generation CLI from the ground up. Phase 1 establishes the shared type system and file path contract — the public API that consuming applications depend on. Phase 2 uses Claude Code as the scanning engine to analyze codebases and produce structured feature maps — leveraging its deep understanding of code rather than building a custom AST parser. Phase 3 constructs the article generator with German-first output and audience-aware prompt templates. Phase 4 adds the DeepL translation engine with correctness safeguards that must ship on day one. Phase 5 wires every stage into a complete CLI pipeline, adds change detection, and layers on the Claude Code Skill for manual article creation.
 
 ## Phases
 
@@ -13,7 +13,7 @@ A five-phase pipeline builds the multilingual documentation generation CLI from 
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [ ] **Phase 1: Foundation** - Config layer, shared types, file path contract, and project scaffolding
-- [ ] **Phase 2: Codebase Scanner** - Feature detection from React Native, Next.js, and API codebases
+- [ ] **Phase 2: Codebase Scanner** - Claude Code-powered feature detection from all three codebases
 - [ ] **Phase 3: Article Generation** - German-first support article authoring via Claude AI
 - [ ] **Phase 4: Translation Pipeline** - DeepL translation with hash gating and glossary integration
 - [ ] **Phase 5: Pipeline Assembly and Manual Skill** - Full CLI orchestration, change detection, and manual article skill
@@ -33,15 +33,15 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: TBD
 
 ### Phase 2: Codebase Scanner
-**Goal**: Developer can point the scanner at local clones of the mobile app, dashboard, and platform API repos and receive a structured feature map of user-facing screens and flows
+**Goal**: CLI invokes Claude Code to analyze local repo clones and produce a structured feature map of user-facing screens and flows — leveraging Claude Code's deep code understanding instead of custom AST parsing
 **Depends on**: Phase 1
 **Requirements**: SCAN-01, SCAN-02, SCAN-03, SCAN-04, SCAN-05, SCAN-06, SCAN-07
 **Success Criteria** (what must be TRUE):
-  1. Scanner identifies user-facing screens and flows from the React Native mobile app codebase and excludes loading screens, nav wrappers, and infrastructure components
-  2. Scanner identifies user-facing screens and flows from the Next.js dashboard codebase with admin-context classification
-  3. Scanner extracts data model and endpoint context from the platform API codebase without generating articles for it
-  4. Running the scanner twice on an unchanged codebase produces identical feature map output with identical stable identifiers
-  5. Scanner produces a diff against a stored snapshot and reports only changed or new features when the codebase has been modified
+  1. Claude Code analyzes the mobile app codebase and identifies user-facing screens/flows, excluding infrastructure components
+  2. Claude Code analyzes the dashboard codebase and identifies user-facing screens/flows with admin-context classification
+  3. Claude Code extracts data model and endpoint context from the platform API codebase without generating articles for it
+  4. Scanning produces a structured JSON feature map with stable, deterministic identifiers — running twice on unchanged code produces identical output
+  5. Scanner compares against a stored snapshot and reports only changed or new features when the codebase has been modified
 **Plans**: TBD
 
 ### Phase 3: Article Generation
