@@ -1,0 +1,14 @@
+{
+  "mobile": {
+    "sha": "c40edd7e392eee0f9b21c78e0790470e1d0f059c",
+    "scannedAt": "2026-03-12T16:42:44.356Z"
+  },
+  "dashboard": {
+    "sha": "7a90aaa84488cc7af2b81cfcda62dcf2cc54eb7e",
+    "scannedAt": "2026-03-12T16:51:57.819Z"
+  },
+  "platform": {
+    "sha": "2717a82533a658b93aa149e28c13e716fa3425ca",
+    "scannedAt": "2026-03-12T16:56:44.004Z"
+  }
+}

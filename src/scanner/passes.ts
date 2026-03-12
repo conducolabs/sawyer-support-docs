@@ -71,6 +71,10 @@ export async function runDiscoveryPass(repoPath: string, logger: Logger): Promis
     if (message.type === 'result' && message.subtype === 'success') {
       resultText = message.result;
     }
+    if (message.type === 'result' && message.subtype !== 'success') {
+      const errorDetail = 'result' in message ? String(message.result) : message.subtype;
+      throw new Error(`Claude Code error (${message.subtype}): ${errorDetail}`);
+    }
   }
 
   return resultText;
@@ -115,6 +119,10 @@ export async function runClassificationPass(
     if (message.type === 'result' && message.subtype === 'success') {
       resultText = message.result;
     }
+    if (message.type === 'result' && message.subtype !== 'success') {
+      const errorDetail = 'result' in message ? String(message.result) : message.subtype;
+      throw new Error(`Claude Code error (${message.subtype}): ${errorDetail}`);
+    }
   }
 
   return resultText;
@@ -153,6 +161,10 @@ export async function runExtractionPass(
   })) {
     if (message.type === 'result' && message.subtype === 'success') {
       structuredOutput = message.structured_output ?? null;
+    }
+    if (message.type === 'result' && message.subtype !== 'success') {
+      const errorDetail = 'result' in message ? String(message.result) : message.subtype;
+      throw new Error(`Claude Code error (${message.subtype}): ${errorDetail}`);
     }
   }
 
@@ -217,6 +229,10 @@ export async function runPlatformPass(repoPath: string, logger: Logger): Promise
     }
     if (message.type === 'result' && message.subtype === 'success') {
       resultText = message.result;
+    }
+    if (message.type === 'result' && message.subtype !== 'success') {
+      const errorDetail = 'result' in message ? String(message.result) : message.subtype;
+      throw new Error(`Claude Code error (${message.subtype}): ${errorDetail}`);
     }
   }
 

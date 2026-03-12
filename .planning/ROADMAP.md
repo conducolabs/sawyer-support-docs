@@ -13,7 +13,7 @@ A five-phase pipeline builds the multilingual documentation generation CLI from 
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Config layer, shared types, file path contract, and project scaffolding
-- [ ] **Phase 2: Codebase Scanner** - Claude Code-powered feature detection from all three codebases
+- [x] **Phase 2: Codebase Scanner** - Claude Code-powered feature detection from all three codebases
 - [x] **Phase 3: Article Generation** - German-first support article authoring via Claude AI (completed 2026-03-12)
 - [ ] **Phase 4: Translation Pipeline** - DeepL translation with hash gating and glossary integration
 - [ ] **Phase 5: Pipeline Assembly and Manual Skill** - Full CLI orchestration, change detection, and manual article skill
@@ -65,8 +65,8 @@ Plans:
 **Plans:** 2/2 plans complete
 
 Plans:
-- [ ] 03-01-PLAN.md — Generator module: prompt templates, frontmatter builder, article writer, SDK wrapper, and unit tests
-- [ ] 03-02-PLAN.md — Generate command wiring and article quality verification checkpoint
+- [x] 03-01-PLAN.md — Generator module: prompt templates, frontmatter builder, article writer, SDK wrapper, and unit tests
+- [x] 03-02-PLAN.md — Generate command wiring and article quality verification checkpoint
 
 ### Phase 4: Translation Pipeline
 **Goal**: German articles are automatically translated into all configured languages via DeepL, with safeguards that prevent overwriting manually corrected translations and mistranslating product-specific UI terms
@@ -98,7 +98,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete | 2026-03-12 |
-| 2. Codebase Scanner | 2/3 | In Progress|  |
+| 2. Codebase Scanner | 2/3 | Complete | 2026-03-12 |
 | 3. Article Generation | 2/2 | Complete   | 2026-03-12 |
 | 4. Translation Pipeline | 0/TBD | Not started | - |
 | 5. Pipeline Assembly and Manual Skill | 0/TBD | Not started | - |

@@ -106,7 +106,12 @@ export const scanCommand = new Command('scan')
           newState.mobile = { sha: currentSha, scannedAt: new Date().toISOString() };
         }
       } catch (err) {
-        logger.error(`Mobile scan failed: ${(err as Error).message}`);
+        const msg = (err as Error).message ?? String(err);
+        const stack = (err as Error).stack ?? '';
+        logger.error(`Mobile scan failed: ${msg}`);
+        if (options.verbose && stack) {
+          logger.error(stack);
+        }
       }
     }
 
@@ -140,7 +145,12 @@ export const scanCommand = new Command('scan')
           newState.dashboard = { sha: currentSha, scannedAt: new Date().toISOString() };
         }
       } catch (err) {
-        logger.error(`Dashboard scan failed: ${(err as Error).message}`);
+        const msg = (err as Error).message ?? String(err);
+        const stack = (err as Error).stack ?? '';
+        logger.error(`Dashboard scan failed: ${msg}`);
+        if (options.verbose && stack) {
+          logger.error(stack);
+        }
       }
     }
 
@@ -165,7 +175,12 @@ export const scanCommand = new Command('scan')
           newState.platform = { sha: currentSha, scannedAt: new Date().toISOString() };
         }
       } catch (err) {
-        logger.error(`Platform scan failed: ${(err as Error).message}`);
+        const msg = (err as Error).message ?? String(err);
+        const stack = (err as Error).stack ?? '';
+        logger.error(`Platform scan failed: ${msg}`);
+        if (options.verbose && stack) {
+          logger.error(stack);
+        }
       }
     }
 
