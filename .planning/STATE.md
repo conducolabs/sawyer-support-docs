@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: verifying
-stopped_at: Phase 4 context gathered
-last_updated: "2026-03-12T20:39:45.626Z"
-last_activity: 2026-03-12 — Phase 3 verified and complete
+status: executing
+stopped_at: Completed 04-translation-pipeline/04-01-PLAN.md
+last_updated: "2026-03-12T21:04:33Z"
+last_activity: 2026-03-12 — Phase 4 plan 01 complete
 progress:
   total_phases: 5
   completed_phases: 2
-  total_plans: 7
-  completed_plans: 6
-  percent: 60
+  total_plans: 9
+  completed_plans: 7
+  percent: 78
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-12)
 
 **Core value:** End users, club admins, and company admins can find clear, accurate, up-to-date support documentation in their language for every feature in the sawyer ecosystem.
-**Current focus:** Phase 4 — Translation Pipeline (next)
+**Current focus:** Phase 4 — Translation Pipeline (in progress)
 
 ## Current Position
 
-Phase: 3 of 5 (Article Generation) — COMPLETE ✓
-Plan: 2 of 2 in current phase (all done)
-Status: Phase 3 verified — generator module, command wiring, 97 tests passing
-Last activity: 2026-03-12 — Phase 3 verified and complete
+Phase: 4 of 5 (Translation Pipeline) — IN PROGRESS
+Plan: 1 of 2 in current phase (plan 01 done, plan 02 next)
+Status: Phase 4 plan 01 complete — translator module, 30 new tests, 127 total passing
+Last activity: 2026-03-12 — Phase 4 plan 01 complete
 
-Progress: [██████░░░░] 60%
+Progress: [████████░░] 78%
 
 ## Performance Metrics
 
@@ -50,6 +50,8 @@ Progress: [██████░░░░] 60%
 **Recent Trend:**
 - Last 5 plans: 5 min (01-02), 8 min (02-01), 4 min (02-02), 4 min (03-01), 2 min (03-02)
 - Trend: stable
+
+| 04-translation-pipeline | 1 | 3 min | 3 min |
 
 *Updated after each plan completion*
 
@@ -81,6 +83,9 @@ Recent decisions affecting current work:
 - [Phase 03-02]: --features accepts slugs (not display names) — stable machine identifiers as public contract
 - [Phase 03-02]: Per-feature error isolation — failed++ then continue, process.exit(1) after full loop if any failed
 - [Phase 03-article-generation]: Human-verified article quality: German Du-form, audience-appropriate vocabulary, correct YAML frontmatter, deterministic at temperature 0
+- [Phase 04-translation-pipeline]: TargetLanguageCode uses lowercase hyphenated format (en-US not EN-US) — confirmed from deepl-node TypeScript types
+- [Phase 04-translation-pipeline]: DeepLClient vi.mock() factory must use class syntax — arrow functions cannot be called with new in Vitest mocks
+- [Phase 04-translation-pipeline]: checkGating() wraps parseFrontmatter() in try/catch — malformed translated files return translate action rather than throwing
 
 ### Pending Todos
 
@@ -93,6 +98,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T20:39:45.623Z
-Stopped at: Phase 4 context gathered
-Resume file: .planning/phases/04-translation-pipeline/04-CONTEXT.md
+Last session: 2026-03-12T21:05:55.539Z
+Stopped at: Completed 04-translation-pipeline/04-01-PLAN.md
+Resume file: None

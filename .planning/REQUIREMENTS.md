@@ -11,7 +11,7 @@
 - [x] **CLI-02**: Developer can configure the target language list via config file (default: DE, NL, EN-US, TR, UK)
 - [x] **CLI-03**: Developer can configure the AI model via config file (default: Claude Sonnet 4.5)
 - [ ] **CLI-04**: Developer can run a dry-run to preview what articles would be generated without calling APIs
-- [ ] **CLI-05**: CLI displays clear, actionable error messages when DeepL or Claude API calls fail
+- [x] **CLI-05**: CLI displays clear, actionable error messages when DeepL or Claude API calls fail
 - [x] **CLI-06**: CLI reads API keys (DeepL, Anthropic) from environment variables or a local .env file
 - [x] **CLI-07**: Project ships a .env.template with required variable names (no actual secrets)
 - [x] **CLI-08**: .env and any files containing secrets are in .gitignore — never committed to the public repo
@@ -39,10 +39,10 @@
 
 ### Translation
 
-- [ ] **TRANS-01**: System translates German articles to all configured languages via DeepL Pro API
-- [ ] **TRANS-02**: Translated articles are placed in per-language directories (e.g., docs/de/, docs/en/, docs/nl/, docs/tr/, docs/uk/)
-- [ ] **TRANS-03**: Translation uses content hash gating — does not overwrite translated files that were manually corrected
-- [ ] **TRANS-04**: All generated and translated files land locally — no auto-commit to git
+- [x] **TRANS-01**: System translates German articles to all configured languages via DeepL Pro API
+- [x] **TRANS-02**: Translated articles are placed in per-language directories (e.g., docs/de/, docs/en/, docs/nl/, docs/tr/, docs/uk/)
+- [x] **TRANS-03**: Translation uses content hash gating — does not overwrite translated files that were manually corrected
+- [x] **TRANS-04**: All generated and translated files land locally — no auto-commit to git
 
 ### File Organization
 
@@ -98,7 +98,7 @@
 | CLI-02 | Phase 1 | Complete |
 | CLI-03 | Phase 1 | Complete |
 | CLI-04 | Phase 5 | Pending |
-| CLI-05 | Phase 4 | Pending |
+| CLI-05 | Phase 4 | Complete |
 | CLI-06 | Phase 1 | Complete |
 | CLI-07 | Phase 1 | Complete |
 | CLI-08 | Phase 1 | Complete |
@@ -117,10 +117,10 @@
 | GEN-06 | Phase 3 | Complete |
 | GEN-07 | Phase 3 | Complete |
 | GEN-08 | Phase 3 | Complete |
-| TRANS-01 | Phase 4 | Pending |
-| TRANS-02 | Phase 4 | Pending |
-| TRANS-03 | Phase 4 | Pending |
-| TRANS-04 | Phase 4 | Pending |
+| TRANS-01 | Phase 4 | Complete |
+| TRANS-02 | Phase 4 | Complete |
+| TRANS-03 | Phase 4 | Complete |
+| TRANS-04 | Phase 4 | Complete |
 | FILE-01 | Phase 1 | Complete |
 | FILE-02 | Phase 1 | Complete |
 | FILE-03 | Phase 1 | Complete |

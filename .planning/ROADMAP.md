@@ -77,7 +77,7 @@ Plans:
   2. A translated file that has been manually edited is not overwritten when the generator re-runs, because its source hash has not changed
   3. When a DeepL API call fails (quota exceeded, timeout, invalid key), the CLI prints a clear, actionable error message identifying which article failed and why
   4. All generated and translated files land on the local filesystem — nothing is auto-committed to git
-**Plans:** 2 plans
+**Plans:** 1/2 plans executed
 
 Plans:
 - [ ] 04-01-PLAN.md — Translator module: DeepL client, hash gating, frontmatter round-trip, file writer (TDD)
@@ -104,5 +104,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Foundation | 2/2 | Complete | 2026-03-12 |
 | 2. Codebase Scanner | 2/3 | Complete | 2026-03-12 |
 | 3. Article Generation | 2/2 | Complete   | 2026-03-12 |
-| 4. Translation Pipeline | 0/2 | Planning complete | - |
+| 4. Translation Pipeline | 1/2 | In Progress|  |
 | 5. Pipeline Assembly and Manual Skill | 0/TBD | Not started | - |
