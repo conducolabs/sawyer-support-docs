@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: verifying
-stopped_at: Phase 2 context gathered
-last_updated: "2026-03-12T13:58:25.523Z"
-last_activity: 2026-03-12 — Phase 1 Foundation complete
+status: in_progress
+stopped_at: Completed 02-01-PLAN.md
+last_updated: "2026-03-12T17:14:30Z"
+last_activity: 2026-03-12 — Phase 2 Plan 01 complete
 progress:
   total_phases: 5
   completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
-  percent: 20
+  total_plans: 3
+  completed_plans: 3
+  percent: 25
 ---
 
 # Project State
@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-03-12)
 
 ## Current Position
 
-Phase: 1 of 5 (Foundation) — COMPLETE
-Plan: 2 of 2 in current phase (all done)
-Status: Phase 1 verified and complete
-Last activity: 2026-03-12 — Phase 1 Foundation complete
+Phase: 2 of 5 (Codebase Scanner) — IN PROGRESS
+Plan: 1 of 3 in current phase (02-01 done)
+Status: Phase 2 Plan 01 complete — scanner schemas, state persistence, change detection
+Last activity: 2026-03-12 — Phase 2 Plan 01 complete
 
-Progress: [██░░░░░░░░] 20%
+Progress: [███░░░░░░░] 25%
 
 ## Performance Metrics
 
@@ -44,9 +44,10 @@ Progress: [██░░░░░░░░] 20%
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-foundation | 2 | 8 min | 4 min |
+| 02-codebase-scanner | 1 | 8 min | 8 min |
 
 **Recent Trend:**
-- Last 5 plans: 3 min (01-01), 5 min (01-02)
+- Last 5 plans: 3 min (01-01), 5 min (01-02), 8 min (02-01)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -67,6 +68,9 @@ Recent decisions affecting current work:
 - 01-01: Zod safeParse used everywhere — raw ZodError never surfaces to users
 - [Phase 01-foundation]: buildArticlePath does not call buildSlug internally — callers pre-slugify, keeping path builder pure and testable in isolation — Caller-pre-slugify is the established pattern for the paths module
 - [Phase 01-foundation]: SupportedLang re-exported from src/paths/index.ts so consumers of the paths module get the type without importing from src/config — Single import point for consuming modules using paths
+- [Phase 02-01]: getChangedFiles returns empty array for empty storedSha — caller handles full scan, not this function
+- [Phase 02-01]: needsScan returns empty changedFiles on first run — full scan scope is caller's responsibility
+- [Phase 02-01]: SAWYER_DOCS_DIR exported as named constant to avoid magic strings in consumers
 
 ### Pending Todos
 
@@ -80,6 +84,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T13:58:25.520Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-codebase-scanner/02-CONTEXT.md
+Last session: 2026-03-12T17:14:30Z
+Stopped at: Completed 02-01-PLAN.md
+Resume file: .planning/phases/02-codebase-scanner/02-01-SUMMARY.md

@@ -22,9 +22,9 @@
 - [ ] **SCAN-02**: CLI invokes Claude Code to analyze the dashboard codebase and identify user-facing screens and flows
 - [ ] **SCAN-03**: CLI invokes Claude Code to extract context from the platform API codebase (data models, endpoints) without generating articles for it
 - [ ] **SCAN-04**: Claude Code classifies components as user-facing features vs infrastructure (filters out loading screens, nav wrappers, etc.)
-- [ ] **SCAN-05**: Scanning produces a structured feature map (JSON) that feeds into article generation
-- [ ] **SCAN-06**: Feature map uses stable, deterministic identifiers for features (idempotent — rerunning produces same file names)
-- [ ] **SCAN-07**: Scanner detects changed features via git diff against a stored state file, only regenerating docs for changes
+- [x] **SCAN-05**: Scanning produces a structured feature map (JSON) that feeds into article generation
+- [x] **SCAN-06**: Feature map uses stable, deterministic identifiers for features (idempotent — rerunning produces same file names)
+- [x] **SCAN-07**: Scanner detects changed features via git diff against a stored state file, only regenerating docs for changes
 
 ### Article Generation
 
@@ -106,9 +106,9 @@
 | SCAN-02 | Phase 2 | Pending |
 | SCAN-03 | Phase 2 | Pending |
 | SCAN-04 | Phase 2 | Pending |
-| SCAN-05 | Phase 2 | Pending |
-| SCAN-06 | Phase 2 | Pending |
-| SCAN-07 | Phase 2 | Pending |
+| SCAN-05 | Phase 2 | Complete |
+| SCAN-06 | Phase 2 | Complete |
+| SCAN-07 | Phase 2 | Complete |
 | GEN-01 | Phase 3 | Pending |
 | GEN-02 | Phase 3 | Pending |
 | GEN-03 | Phase 3 | Pending |

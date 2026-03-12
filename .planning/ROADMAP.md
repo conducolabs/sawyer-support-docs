@@ -49,7 +49,7 @@ Plans:
 **Plans:** 3 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Scanner schemas, scan state persistence, and git change detection (TDD)
+- [x] 02-01-PLAN.md — Scanner schemas, scan state persistence, and git change detection (TDD)
 - [ ] 02-02-PLAN.md — Claude Agent SDK passes, prompt templates, and scan command wiring
 - [ ] 02-03-PLAN.md — End-to-end integration test with real codebases (checkpoint)
 
@@ -94,7 +94,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete | 2026-03-12 |
-| 2. Codebase Scanner | 0/3 | Planning complete | - |
+| 2. Codebase Scanner | 1/3 | In progress | - |
 | 3. Article Generation | 0/TBD | Not started | - |
 | 4. Translation Pipeline | 0/TBD | Not started | - |
 | 5. Pipeline Assembly and Manual Skill | 0/TBD | Not started | - |
