@@ -1,0 +1,91 @@
+# Roadmap: sawyer Support Docs
+
+## Overview
+
+A five-phase pipeline builds the multilingual documentation generation CLI from the ground up. Phase 1 establishes the shared type system and file path contract — the public API that consuming applications depend on. Phase 2 builds the codebase scanner that produces the feature map driving all automated generation. Phase 3 constructs the article generator with German-first output and audience-aware prompt templates. Phase 4 adds the DeepL translation engine with correctness safeguards that must ship on day one. Phase 5 wires every stage into a complete CLI pipeline, adds change detection, and layers on the Claude Code Skill for manual article creation.
+
+## Phases
+
+**Phase Numbering:**
+- Integer phases (1, 2, 3): Planned milestone work
+- Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
+
+Decimal phases appear between their surrounding integers in numeric order.
+
+- [ ] **Phase 1: Foundation** - Config layer, shared types, file path contract, and project scaffolding
+- [ ] **Phase 2: Codebase Scanner** - Feature detection from React Native, Next.js, and API codebases
+- [ ] **Phase 3: Article Generation** - German-first support article authoring via Claude AI
+- [ ] **Phase 4: Translation Pipeline** - DeepL translation with hash gating and glossary integration
+- [ ] **Phase 5: Pipeline Assembly and Manual Skill** - Full CLI orchestration, change detection, and manual article skill
+
+## Phase Details
+
+### Phase 1: Foundation
+**Goal**: Developer can initialize and configure the project with validated settings, and the file path contract is established as a stable public API for consuming applications
+**Depends on**: Nothing (first phase)
+**Requirements**: CLI-02, CLI-03, CLI-06, CLI-07, CLI-08, FILE-01, FILE-02, FILE-03, DOC-01, DOC-02, DOC-03
+**Success Criteria** (what must be TRUE):
+  1. Developer can copy `.env.template` to `.env`, add API keys, and have the config layer validate them at startup with a clear error if a key is missing
+  2. Developer can set target languages and AI model in a config file and have those settings consumed by all downstream stages
+  3. A feature slug produces the same URL-safe English directory path on every run (umlaut-free, collision-detected, idempotent)
+  4. All generated article files land in `docs/{lang}/{feature-area}/` directories consistent across every configured language
+  5. README explains setup, CLI usage, and API key configuration so a new developer can get started without asking questions
+**Plans**: TBD
+
+### Phase 2: Codebase Scanner
+**Goal**: Developer can point the scanner at local clones of the mobile app, dashboard, and platform API repos and receive a structured feature map of user-facing screens and flows
+**Depends on**: Phase 1
+**Requirements**: SCAN-01, SCAN-02, SCAN-03, SCAN-04, SCAN-05, SCAN-06, SCAN-07
+**Success Criteria** (what must be TRUE):
+  1. Scanner identifies user-facing screens and flows from the React Native mobile app codebase and excludes loading screens, nav wrappers, and infrastructure components
+  2. Scanner identifies user-facing screens and flows from the Next.js dashboard codebase with admin-context classification
+  3. Scanner extracts data model and endpoint context from the platform API codebase without generating articles for it
+  4. Running the scanner twice on an unchanged codebase produces identical feature map output with identical stable identifiers
+  5. Scanner produces a diff against a stored snapshot and reports only changed or new features when the codebase has been modified
+**Plans**: TBD
+
+### Phase 3: Article Generation
+**Goal**: Developer can feed a feature map into the generator and receive German-first support articles in all configured article types, written at the correct register and scoped to the right audience
+**Depends on**: Phase 2
+**Requirements**: GEN-01, GEN-02, GEN-03, GEN-04, GEN-05, GEN-06, GEN-07, GEN-08
+**Success Criteria** (what must be TRUE):
+  1. Generator produces a German step-by-step guide, FAQ, troubleshooting article, and feature overview for a given feature — each with correct frontmatter (title, language) and consistent formal register
+  2. Articles generated for mobile app features address end users; articles for dashboard features address club or company admins — content and vocabulary differ appropriately
+  3. Running the generator twice on the same feature map produces identical article output (deterministic at temperature 0)
+  4. Articles for enrollment or onboarding topics direct users to their local contact person rather than providing instructions
+**Plans**: TBD
+
+### Phase 4: Translation Pipeline
+**Goal**: German articles are automatically translated into all configured languages via DeepL, with safeguards that prevent overwriting manually corrected translations and mistranslating product-specific UI terms
+**Depends on**: Phase 3
+**Requirements**: TRANS-01, TRANS-02, TRANS-03, TRANS-04, CLI-05
+**Success Criteria** (what must be TRUE):
+  1. A German article is translated into all configured languages (NL, EN-US, TR, UK) and each translation lands in the correct per-language directory
+  2. A translated file that has been manually edited is not overwritten when the generator re-runs, because its source hash has not changed
+  3. When a DeepL API call fails (quota exceeded, timeout, invalid key), the CLI prints a clear, actionable error message identifying which article failed and why
+  4. All generated and translated files land on the local filesystem — nothing is auto-committed to git
+**Plans**: TBD
+
+### Phase 5: Pipeline Assembly and Manual Skill
+**Goal**: Developer can run a single CLI command to scan configured codebases, detect changes, generate German articles, and translate them — and separately request a new article interactively via the Claude Code Skill
+**Depends on**: Phase 4
+**Requirements**: CLI-01, CLI-04, SKILL-01, SKILL-02, SKILL-03, SKILL-04
+**Success Criteria** (what must be TRUE):
+  1. Developer runs `sawyer-docs generate --mobile ./path --dashboard ./path --platform ./path` and the full pipeline executes: scan, change detect, generate, translate, write
+  2. Developer runs with `--dry-run` and sees a preview of which articles would be generated and the estimated DeepL character cost — no API calls are made
+  3. Developer invokes the Claude Code Skill, describes an article topic, receives clarifying questions if needed, approves a German draft, and finds the translated article files on disk
+  4. On a codebase with no changes since the last run, the pipeline reports no new articles to generate and exits without calling Claude or DeepL
+**Plans**: TBD
+
+## Progress
+
+**Execution Order:**
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
+
+| Phase | Plans Complete | Status | Completed |
+|-------|----------------|--------|-----------|
+| 1. Foundation | 0/TBD | Not started | - |
+| 2. Codebase Scanner | 0/TBD | Not started | - |
+| 3. Article Generation | 0/TBD | Not started | - |
+| 4. Translation Pipeline | 0/TBD | Not started | - |
+| 5. Pipeline Assembly and Manual Skill | 0/TBD | Not started | - |

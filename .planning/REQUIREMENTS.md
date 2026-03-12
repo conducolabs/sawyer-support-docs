@@ -94,49 +94,49 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CLI-01 | — | Pending |
-| CLI-02 | — | Pending |
-| CLI-03 | — | Pending |
-| CLI-04 | — | Pending |
-| CLI-05 | — | Pending |
-| CLI-06 | — | Pending |
-| CLI-07 | — | Pending |
-| CLI-08 | — | Pending |
-| SCAN-01 | — | Pending |
-| SCAN-02 | — | Pending |
-| SCAN-03 | — | Pending |
-| SCAN-04 | — | Pending |
-| SCAN-05 | — | Pending |
-| SCAN-06 | — | Pending |
-| SCAN-07 | — | Pending |
-| GEN-01 | — | Pending |
-| GEN-02 | — | Pending |
-| GEN-03 | — | Pending |
-| GEN-04 | — | Pending |
-| GEN-05 | — | Pending |
-| GEN-06 | — | Pending |
-| GEN-07 | — | Pending |
-| GEN-08 | — | Pending |
-| TRANS-01 | — | Pending |
-| TRANS-02 | — | Pending |
-| TRANS-03 | — | Pending |
-| TRANS-04 | — | Pending |
-| FILE-01 | — | Pending |
-| FILE-02 | — | Pending |
-| FILE-03 | — | Pending |
-| DOC-01 | — | Pending |
-| DOC-02 | — | Pending |
-| DOC-03 | — | Pending |
-| SKILL-01 | — | Pending |
-| SKILL-02 | — | Pending |
-| SKILL-03 | — | Pending |
-| SKILL-04 | — | Pending |
+| CLI-01 | Phase 5 | Pending |
+| CLI-02 | Phase 1 | Pending |
+| CLI-03 | Phase 1 | Pending |
+| CLI-04 | Phase 5 | Pending |
+| CLI-05 | Phase 4 | Pending |
+| CLI-06 | Phase 1 | Pending |
+| CLI-07 | Phase 1 | Pending |
+| CLI-08 | Phase 1 | Pending |
+| SCAN-01 | Phase 2 | Pending |
+| SCAN-02 | Phase 2 | Pending |
+| SCAN-03 | Phase 2 | Pending |
+| SCAN-04 | Phase 2 | Pending |
+| SCAN-05 | Phase 2 | Pending |
+| SCAN-06 | Phase 2 | Pending |
+| SCAN-07 | Phase 2 | Pending |
+| GEN-01 | Phase 3 | Pending |
+| GEN-02 | Phase 3 | Pending |
+| GEN-03 | Phase 3 | Pending |
+| GEN-04 | Phase 3 | Pending |
+| GEN-05 | Phase 3 | Pending |
+| GEN-06 | Phase 3 | Pending |
+| GEN-07 | Phase 3 | Pending |
+| GEN-08 | Phase 3 | Pending |
+| TRANS-01 | Phase 4 | Pending |
+| TRANS-02 | Phase 4 | Pending |
+| TRANS-03 | Phase 4 | Pending |
+| TRANS-04 | Phase 4 | Pending |
+| FILE-01 | Phase 1 | Pending |
+| FILE-02 | Phase 1 | Pending |
+| FILE-03 | Phase 1 | Pending |
+| DOC-01 | Phase 1 | Pending |
+| DOC-02 | Phase 1 | Pending |
+| DOC-03 | Phase 1 | Pending |
+| SKILL-01 | Phase 5 | Pending |
+| SKILL-02 | Phase 5 | Pending |
+| SKILL-03 | Phase 5 | Pending |
+| SKILL-04 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 37 total
-- Mapped to phases: 0
-- Unmapped: 37 ⚠️
+- Mapped to phases: 37
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-12*
-*Last updated: 2026-03-12 after initial definition*
+*Last updated: 2026-03-12 after roadmap creation*
