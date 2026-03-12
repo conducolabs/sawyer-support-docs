@@ -62,7 +62,11 @@ Plans:
   2. Articles generated for mobile app features address end users; articles for dashboard features address club or company admins — content and vocabulary differ appropriately
   3. Running the generator twice on the same feature map produces identical article output (deterministic at temperature 0)
   4. Articles for enrollment or onboarding topics direct users to their local contact person rather than providing instructions
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Generator module: prompt templates, frontmatter builder, article writer, SDK wrapper, and unit tests
+- [ ] 03-02-PLAN.md — Generate command wiring and article quality verification checkpoint
 
 ### Phase 4: Translation Pipeline
 **Goal**: German articles are automatically translated into all configured languages via DeepL, with safeguards that prevent overwriting manually corrected translations and mistranslating product-specific UI terms
@@ -95,6 +99,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete | 2026-03-12 |
 | 2. Codebase Scanner | 2/3 | In Progress|  |
-| 3. Article Generation | 0/TBD | Not started | - |
+| 3. Article Generation | 0/2 | Not started | - |
 | 4. Translation Pipeline | 0/TBD | Not started | - |
 | 5. Pipeline Assembly and Manual Skill | 0/TBD | Not started | - |
