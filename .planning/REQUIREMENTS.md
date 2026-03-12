@@ -46,15 +46,15 @@
 
 ### File Organization
 
-- [ ] **FILE-01**: Articles are organized by feature area within each language directory (e.g., docs/de/authentication/, docs/de/payments/)
-- [ ] **FILE-02**: File paths use URL-safe, umlaut-free English slugs (stable public contract for consuming apps)
-- [ ] **FILE-03**: Directory structure is consistent across all languages
+- [x] **FILE-01**: Articles are organized by feature area within each language directory (e.g., docs/de/authentication/, docs/de/payments/)
+- [x] **FILE-02**: File paths use URL-safe, umlaut-free English slugs (stable public contract for consuming apps)
+- [x] **FILE-03**: Directory structure is consistent across all languages
 
 ### Documentation
 
-- [ ] **DOC-01**: README.md explains what the project is, how to set it up, and how to use the CLI
-- [ ] **DOC-02**: README includes setup instructions for API keys (copy .env.template to .env)
-- [ ] **DOC-03**: README documents available CLI commands and flags
+- [x] **DOC-01**: README.md explains what the project is, how to set it up, and how to use the CLI
+- [x] **DOC-02**: README includes setup instructions for API keys (copy .env.template to .env)
+- [x] **DOC-03**: README documents available CLI commands and flags
 
 ### Manual Article Skill
 
@@ -121,12 +121,12 @@
 | TRANS-02 | Phase 4 | Pending |
 | TRANS-03 | Phase 4 | Pending |
 | TRANS-04 | Phase 4 | Pending |
-| FILE-01 | Phase 1 | Pending |
-| FILE-02 | Phase 1 | Pending |
-| FILE-03 | Phase 1 | Pending |
-| DOC-01 | Phase 1 | Pending |
-| DOC-02 | Phase 1 | Pending |
-| DOC-03 | Phase 1 | Pending |
+| FILE-01 | Phase 1 | Complete |
+| FILE-02 | Phase 1 | Complete |
+| FILE-03 | Phase 1 | Complete |
+| DOC-01 | Phase 1 | Complete |
+| DOC-02 | Phase 1 | Complete |
+| DOC-03 | Phase 1 | Complete |
 | SKILL-01 | Phase 5 | Pending |
 | SKILL-02 | Phase 5 | Pending |
 | SKILL-03 | Phase 5 | Pending |

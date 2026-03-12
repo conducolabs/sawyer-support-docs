@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: in_progress
-stopped_at: Completed 01-01-PLAN.md
-last_updated: "2026-03-12T13:31:02Z"
+status: executing
+stopped_at: Completed 01-02-PLAN.md
+last_updated: "2026-03-12T13:40:56.527Z"
 last_activity: 2026-03-12 — Completed Plan 01-01
 progress:
   total_phases: 5
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 2
-  completed_plans: 1
+  completed_plans: 2
   percent: 10
 ---
 
@@ -50,6 +50,7 @@ Progress: [█░░░░░░░░░] 10%
 - Trend: —
 
 *Updated after each plan completion*
+| Phase 01-foundation P02 | 5 min | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -65,6 +66,8 @@ Recent decisions affecting current work:
 - 01-01: ESM-only project from day one — no CJS compatibility layer needed for a local dev CLI
 - 01-01: dotenv.config() called as first line of loadConfig() to prevent env-before-load bugs
 - 01-01: Zod safeParse used everywhere — raw ZodError never surfaces to users
+- [Phase 01-foundation]: buildArticlePath does not call buildSlug internally — callers pre-slugify, keeping path builder pure and testable in isolation — Caller-pre-slugify is the established pattern for the paths module
+- [Phase 01-foundation]: SupportedLang re-exported from src/paths/index.ts so consumers of the paths module get the type without importing from src/config — Single import point for consuming modules using paths
 
 ### Pending Todos
 
@@ -78,6 +81,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T13:31:02Z
-Stopped at: Completed 01-01-PLAN.md
-Resume file: .planning/phases/01-foundation/01-02-PLAN.md
+Last session: 2026-03-12T13:40:56.525Z
+Stopped at: Completed 01-02-PLAN.md
+Resume file: None
