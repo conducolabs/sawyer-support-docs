@@ -15,3 +15,20 @@ export {
 } from './state.js';
 
 export { getCurrentSha, getChangedFiles, needsScan } from './change-detection.js';
+
+export {
+  runDiscoveryPass,
+  runClassificationPass,
+  runExtractionPass,
+  runPlatformPass,
+} from './passes.js';
+
+export { mergeFeatureMaps } from './merge.js';
+
+export {
+  SYSTEM_PROMPT,
+  PASS1_PROMPT,
+  PASS2_PROMPT,
+  PASS3_PROMPT,
+  PLATFORM_PROMPT,
+} from './prompts.js';
