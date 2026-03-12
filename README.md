@@ -8,19 +8,19 @@ CLI tool for generating and translating multilingual support documentation for t
 Codebase Repos
      │
      ▼
-Scanner (Claude Code)
+Scanner (Claude Agent SDK — multi-pass)
      │
      ▼
-Feature Map
+Feature Map (JSON)
      │
      ▼
-Generator (Claude AI)
+Generator (Claude AI — temperature 0)
      │
      ▼
-German Articles
+German Articles (docs/de/)
      │
      ▼
-Translator (DeepL Pro)
+Translator (DeepL Pro — hash gated)
      │
      ▼
 Multilingual Docs
@@ -31,10 +31,10 @@ Consuming applications (mobile app, dashboard, etc.) clone or pull this repo and
 
 ## Prerequisites
 
-- Node.js 18 or later
+- Node.js 22 or later
 - npm
-- DeepL Pro API key (required for `translate` command)
-- Anthropic API key (required for `generate` command)
+- DeepL Pro API key (required for `translate` and `run` commands)
+- Anthropic API key (required for `scan`, `generate`, and `run` commands)
 
 ## Setup
 
@@ -115,41 +115,32 @@ Store repo paths in the config file so you do not have to pass `--mobile`, `--da
 
 All commands are available via `sawyer-docs` (after `npm run build && npm link`) or `npm run dev -- <command>` (no build step).
 
-### `sawyer-docs generate`
+### `sawyer-docs run`
 
-Scan the configured codebases and generate German support articles.
+Run the full pipeline: scan codebases, detect changes, generate German articles, and translate them. This is the primary command for keeping documentation up to date.
 
 ```
-sawyer-docs generate [options]
+sawyer-docs run [options]
 
 Options:
   --mobile <path>      Override mobile app repository path
   --dashboard <path>   Override dashboard repository path
   --platform <path>    Override platform repository path
-  --dry-run            Preview what would be generated without writing files
-  -v, --verbose        Show detailed output
-  -q, --quiet          Suppress all output except errors
-  --config <path>      Path to config file (default: ./sawyer-docs.config.json)
-  -h, --help           Display help
+  --features <slugs>   Comma-separated feature slugs to process (intersect with detected changes)
+  --languages <langs>  Override config languages (comma-separated, e.g., en,nl)
+  --dry-run            Preview what would be generated/translated without API calls (scan still runs)
+  --force              Force overwrite translations even if manually edited
+  --verbose            Show detailed progress
+  --quiet              Suppress non-essential output
 ```
 
-### `sawyer-docs translate`
+**Change detection:** On subsequent runs, the scanner compares against a stored state file and only regenerates articles for features in codebases that changed. If nothing changed, the pipeline exits early without calling Claude or DeepL.
 
-Translate existing German articles to all configured languages via DeepL Pro.
-
-```
-sawyer-docs translate [options]
-
-Options:
-  -v, --verbose        Show detailed output
-  -q, --quiet          Suppress all output except errors
-  --config <path>      Path to config file (default: ./sawyer-docs.config.json)
-  -h, --help           Display help
-```
+**Hash gating:** Translated files include a `source_hash` in frontmatter. If you manually edit a translation, it will not be overwritten on the next run unless the German source article has changed. Use `--force` to overwrite regardless.
 
 ### `sawyer-docs scan`
 
-Scan the configured codebases and output a feature map (without generating articles).
+Scan codebases and produce a feature map (without generating articles). Useful for inspecting what the scanner detects.
 
 ```
 sawyer-docs scan [options]
@@ -161,7 +152,32 @@ Options:
   -v, --verbose        Show detailed output
   -q, --quiet          Suppress all output except errors
   --config <path>      Path to config file (default: ./sawyer-docs.config.json)
-  -h, --help           Display help
+```
+
+### `sawyer-docs generate`
+
+Generate German support articles from the feature map. Requires a prior `scan` run.
+
+```
+sawyer-docs generate [options]
+
+Options:
+  --features <slugs>   Comma-separated feature slugs to generate (default: all)
+  --dry-run            Preview what would be generated without making API calls
+```
+
+### `sawyer-docs translate`
+
+Translate German articles to all configured languages via DeepL Pro.
+
+```
+sawyer-docs translate [options]
+
+Options:
+  --features <slugs>   Comma-separated feature slugs to translate (default: all)
+  --languages <langs>  Override config languages (comma-separated, e.g., en,nl)
+  --dry-run            Show what would be translated and estimated character count
+  --force              Overwrite translations even if manually edited
 ```
 
 ### Global flags
@@ -174,6 +190,17 @@ All commands accept these flags:
 | `--quiet` | `-q` | Suppress all output except errors |
 | `--config <path>` | — | Use a custom config file path |
 | `--help` | `-h` | Show command help |
+
+### Manual article creation (Claude Code Skill)
+
+If you use Claude Code, invoke the `/new-article` skill to create a one-off article interactively. The skill:
+
+1. Asks structured questions (topic, audience, feature area)
+2. Asks clarifying questions if the scope is unclear
+3. Generates a German draft and presents it for approval
+4. On approval, auto-translates to all configured languages
+
+Manual articles land in the same `docs/` tree as automated ones but are not tracked in the feature map, so they will not be overwritten by subsequent `run` commands.
 
 ## Output Directory Structure
 
@@ -215,44 +242,44 @@ Example slugs:
 - `Passwort zurücksetzen` → `passwort-zurucksetzen`
 - `Club Übersicht` → `club-ubersicht`
 
-## Example Article Output
+## Article Format
 
-A generated article looks like this:
+Articles are generated in German first, then translated. Each article has YAML frontmatter and a markdown body:
 
 ```markdown
 ---
-title: Logging In
-language: en
+title: Anmelden
+language: de
 ---
 
-# Logging In
+# Anmelden
 
-This article explains how to log in to the sawyer app.
+Dieser Artikel erklärt, wie du dich in der sawyer App anmeldest.
 
-## Steps
+## Schritte
 
-1. Open the sawyer app on your device.
-2. Tap **Sign in**.
-3. Enter your email address and password.
-4. Tap **Continue**.
-
-If you have forgotten your password, tap **Forgot password?** on the sign-in screen.
-
-## Troubleshooting
-
-**I cannot log in.**
-Check that you are using the email address associated with your sawyer account. If the issue persists, contact your club or company administrator.
+1. Öffne die sawyer App auf deinem Gerät.
+2. Tippe auf **Anmelden**.
+3. Gib deine E-Mail-Adresse und dein Passwort ein.
+4. Tippe auf **Weiter**.
 ```
 
-German is always the source language. The `translate` command produces equivalent articles under the `en/`, `nl/`, `tr/`, and `uk/` directories.
+Translated files include an additional `source_hash` field in frontmatter to track the German source version.
+
+Articles are audience-aware:
+- **Mobile app features** are written for end users (informal Du-form)
+- **Dashboard features** are written for club/company admins
+
+Enrollment and onboarding topics direct users to their local contact person rather than providing step-by-step instructions.
 
 ## Development
 
 Run the CLI directly without building:
 
 ```bash
+npm run dev -- run --dry-run --mobile ../sawyer-mobile-app --dashboard ../sawyer-dashboard --platform ../projectsawyer-platform
 npm run dev -- generate --dry-run
-npm run dev -- translate
+npm run dev -- translate --dry-run
 npm run dev -- scan --verbose
 ```
 
@@ -277,6 +304,7 @@ Output lands in `dist/` as ESM JavaScript. The `dist/` directory is git-ignored 
 - TypeScript with strict mode enabled — no `any` types
 - Pure ESM project — all imports use `.js` extensions (even when importing `.ts` source files)
 - Config validation with Zod `safeParse` — raw `ZodError` is never surfaced to users
+- Temperature 0 for all Claude generation calls (determinism is a correctness requirement)
 
 ### Architecture
 
@@ -285,13 +313,17 @@ The project uses a vertical slice structure:
 ```
 src/
 ├── bin/        — CLI entry point (commander setup)
-├── commands/   — One file per subcommand (generate, translate, scan)
+├── commands/   — One file per subcommand (scan, generate, translate, run)
 ├── config/     — Config schema (Zod), loader, barrel export
+├── generator/  — Prompt templates, frontmatter builder, article writer
 ├── paths/      — Slug utility and article path builder (public contract)
+├── scanner/    — Multi-pass Claude Agent SDK scanner, schemas, state persistence
+├── skill/      — Manual article creation helper for Claude Code Skill
+├── translator/ — DeepL client, hash gating, frontmatter round-trip, file writer
 └── ui/         — Logger utility (ora + picocolors)
 ```
 
-Each module is self-contained. Downstream phases (scanner, generator, translator) import from `src/config/index.js` and `src/paths/index.js` without coupling to internal implementation details.
+Each module is self-contained with a barrel export (`index.ts`). Downstream modules import from barrel exports without coupling to internal implementation details.
 
 ### Before submitting
 
