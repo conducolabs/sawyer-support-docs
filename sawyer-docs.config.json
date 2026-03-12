@@ -1,0 +1,9 @@
+{
+  "languages": ["de", "en", "nl", "tr", "uk"],
+  "model": "claude-sonnet-4-5",
+  "repos": {
+    "mobile": "./repos/mobile",
+    "dashboard": "./repos/dashboard",
+    "platform": "./repos/platform"
+  }
+}
