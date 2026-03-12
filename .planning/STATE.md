@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: active
-stopped_at: "Completed 05-01-PLAN.md"
-last_updated: "2026-03-12T22:07:35Z"
+status: completed
+stopped_at: Completed 05-02-PLAN.md
+last_updated: "2026-03-12T22:09:46.970Z"
 last_activity: 2026-03-12 — Phase 5 plan 01 complete
 progress:
   total_phases: 5
   completed_phases: 4
-  total_plans: 9
-  completed_plans: 9
-  percent: 100
+  total_plans: 11
+  completed_plans: 10
+  percent: 94
 ---
 
 # Project State
@@ -55,6 +55,7 @@ Progress: [█████████░] 94%
 | 05-pipeline-assembly-and-manual-skill | 1/2 | 3 min | 3 min |
 
 *Updated after each plan completion*
+| Phase 05-pipeline-assembly-and-manual-skill P02 | 4 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -93,6 +94,8 @@ Recent decisions affecting current work:
 - [Phase 05-01]: Translate stage uses generatedSlugs not changedSlugs — only freshly generated articles get translated
 - [Phase 05-01]: Dry-run explicitly notifies developer that scan used Claude API before previewing remaining stages (CLI-04)
 - [Phase 05-01]: No-changes early exit checks for missing articles before exiting — no silent skip when articles were deleted
+- [Phase 05-pipeline-assembly-and-manual-skill]: SKILL.md uses disable-model-invocation: true — explicit user invocation only for side-effect workflows
+- [Phase 05-pipeline-assembly-and-manual-skill]: Manual articles are NOT added to feature-map.json — skill articles are one-off documents, not scanner output, preventing regeneration overwrites
 
 ### Pending Todos
 
@@ -105,6 +108,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T22:07:35Z
-Stopped at: Completed 05-01-PLAN.md
-Resume file: .planning/phases/05-pipeline-assembly-and-manual-skill/05-02-PLAN.md
+Last session: 2026-03-12T22:09:46.967Z
+Stopped at: Completed 05-02-PLAN.md
+Resume file: None

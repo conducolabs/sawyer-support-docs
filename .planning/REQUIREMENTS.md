@@ -58,10 +58,10 @@
 
 ### Manual Article Skill
 
-- [ ] **SKILL-01**: Claude Code Skill allows user to request a new article by describing what it should cover
-- [ ] **SKILL-02**: Skill asks clarifying questions if the article scope or topic is unclear
-- [ ] **SKILL-03**: Skill generates a German draft as .md file and presents it for approval
-- [ ] **SKILL-04**: On approval, skill auto-translates the article to all configured languages via DeepL
+- [x] **SKILL-01**: Claude Code Skill allows user to request a new article by describing what it should cover
+- [x] **SKILL-02**: Skill asks clarifying questions if the article scope or topic is unclear
+- [x] **SKILL-03**: Skill generates a German draft as .md file and presents it for approval
+- [x] **SKILL-04**: On approval, skill auto-translates the article to all configured languages via DeepL
 
 ## v2 Requirements
 
@@ -127,10 +127,10 @@
 | DOC-01 | Phase 1 | Complete |
 | DOC-02 | Phase 1 | Complete |
 | DOC-03 | Phase 1 | Complete |
-| SKILL-01 | Phase 5 | Pending |
-| SKILL-02 | Phase 5 | Pending |
-| SKILL-03 | Phase 5 | Pending |
-| SKILL-04 | Phase 5 | Pending |
+| SKILL-01 | Phase 5 | Complete |
+| SKILL-02 | Phase 5 | Complete |
+| SKILL-03 | Phase 5 | Complete |
+| SKILL-04 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 37 total

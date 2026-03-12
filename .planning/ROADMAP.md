@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Codebase Scanner** - Claude Code-powered feature detection from all three codebases
 - [x] **Phase 3: Article Generation** - German-first support article authoring via Claude AI (completed 2026-03-12)
 - [x] **Phase 4: Translation Pipeline** - DeepL translation with hash gating and glossary integration (completed 2026-03-12)
-- [ ] **Phase 5: Pipeline Assembly and Manual Skill** - Full CLI orchestration, change detection, and manual article skill
+- [x] **Phase 5: Pipeline Assembly and Manual Skill** - Full CLI orchestration, change detection, and manual article skill (completed 2026-03-12)
 
 ## Phase Details
 
@@ -92,7 +92,7 @@ Plans:
   2. Developer runs with `--dry-run` and sees a preview of which articles would be generated and the estimated DeepL character cost — no API calls are made
   3. Developer invokes the Claude Code Skill, describes an article topic, receives clarifying questions if needed, approves a German draft, and finds the translated article files on disk
   4. On a codebase with no changes since the last run, the pipeline reports no new articles to generate and exits without calling Claude or DeepL
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] 05-01-PLAN.md — Run command: full pipeline orchestration with change detection, selective generation, and dry-run
@@ -109,4 +109,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Codebase Scanner | 2/3 | Complete | 2026-03-12 |
 | 3. Article Generation | 2/2 | Complete   | 2026-03-12 |
 | 4. Translation Pipeline | 2/2 | Complete   | 2026-03-12 |
-| 5. Pipeline Assembly and Manual Skill | 1/2 | In Progress|  |
+| 5. Pipeline Assembly and Manual Skill | 2/2 | Complete   | 2026-03-12 |
