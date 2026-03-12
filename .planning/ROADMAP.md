@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation** - Config layer, shared types, file path contract, and project scaffolding
 - [x] **Phase 2: Codebase Scanner** - Claude Code-powered feature detection from all three codebases
 - [x] **Phase 3: Article Generation** - German-first support article authoring via Claude AI (completed 2026-03-12)
-- [ ] **Phase 4: Translation Pipeline** - DeepL translation with hash gating and glossary integration
+- [x] **Phase 4: Translation Pipeline** - DeepL translation with hash gating and glossary integration (completed 2026-03-12)
 - [ ] **Phase 5: Pipeline Assembly and Manual Skill** - Full CLI orchestration, change detection, and manual article skill
 
 ## Phase Details
@@ -77,7 +77,7 @@ Plans:
   2. A translated file that has been manually edited is not overwritten when the generator re-runs, because its source hash has not changed
   3. When a DeepL API call fails (quota exceeded, timeout, invalid key), the CLI prints a clear, actionable error message identifying which article failed and why
   4. All generated and translated files land on the local filesystem — nothing is auto-committed to git
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] 04-01-PLAN.md — Translator module: DeepL client, hash gating, frontmatter round-trip, file writer (TDD)
@@ -104,5 +104,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Foundation | 2/2 | Complete | 2026-03-12 |
 | 2. Codebase Scanner | 2/3 | Complete | 2026-03-12 |
 | 3. Article Generation | 2/2 | Complete   | 2026-03-12 |
-| 4. Translation Pipeline | 1/2 | In Progress|  |
+| 4. Translation Pipeline | 2/2 | Complete   | 2026-03-12 |
 | 5. Pipeline Assembly and Manual Skill | 0/TBD | Not started | - |

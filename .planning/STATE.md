@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 04-translation-pipeline/04-01-PLAN.md
-last_updated: "2026-03-12T21:04:33Z"
-last_activity: 2026-03-12 — Phase 4 plan 01 complete
+stopped_at: Completed 04-translation-pipeline/04-02-PLAN.md
+last_updated: "2026-03-12T21:15:19Z"
+last_activity: 2026-03-12 — Phase 4 plan 02 complete
 progress:
   total_phases: 5
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 9
-  completed_plans: 7
-  percent: 78
+  completed_plans: 8
+  percent: 89
 ---
 
 # Project State
@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-03-12)
 
 ## Current Position
 
-Phase: 4 of 5 (Translation Pipeline) — IN PROGRESS
-Plan: 1 of 2 in current phase (plan 01 done, plan 02 next)
-Status: Phase 4 plan 01 complete — translator module, 30 new tests, 127 total passing
-Last activity: 2026-03-12 — Phase 4 plan 01 complete
+Phase: 4 of 5 (Translation Pipeline) — COMPLETE
+Plan: 2 of 2 in current phase (both plans done, phase complete)
+Status: Phase 4 complete — translate command wired, end-to-end DeepL translation human-verified
+Last activity: 2026-03-12 — Phase 4 plan 02 complete
 
-Progress: [████████░░] 78%
+Progress: [█████████░] 89%
 
 ## Performance Metrics
 
@@ -51,7 +51,7 @@ Progress: [████████░░] 78%
 - Last 5 plans: 5 min (01-02), 8 min (02-01), 4 min (02-02), 4 min (03-01), 2 min (03-02)
 - Trend: stable
 
-| 04-translation-pipeline | 1 | 3 min | 3 min |
+| 04-translation-pipeline | 2 | 10 min | 5 min |
 
 *Updated after each plan completion*
 
@@ -86,6 +86,9 @@ Recent decisions affecting current work:
 - [Phase 04-translation-pipeline]: TargetLanguageCode uses lowercase hyphenated format (en-US not EN-US) — confirmed from deepl-node TypeScript types
 - [Phase 04-translation-pipeline]: DeepLClient vi.mock() factory must use class syntax — arrow functions cannot be called with new in Vitest mocks
 - [Phase 04-translation-pipeline]: checkGating() wraps parseFrontmatter() in try/catch — malformed translated files return translate action rather than throwing
+- [Phase 04-02]: translate command creates DeepL client once before loop — avoids per-job connection overhead
+- [Phase 04-02]: config.languages filtered to exclude 'de' before --languages intersection — German is never a translation target
+- [Phase 04-02]: --dry-run exits before createDeepLClient() — character estimation works without a DeepL API key
 
 ### Pending Todos
 
@@ -98,6 +101,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T21:05:55.539Z
-Stopped at: Completed 04-translation-pipeline/04-01-PLAN.md
+Last session: 2026-03-12T21:15:19Z
+Stopped at: Completed 04-translation-pipeline/04-02-PLAN.md
 Resume file: None
