@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 03-01-PLAN.md
-last_updated: "2026-03-12T20:01:18.381Z"
-last_activity: 2026-03-12 — Phase 2 Plan 02 complete
+stopped_at: Completed 03-02-PLAN.md (checkpoint:human-verify Task 2)
+last_updated: "2026-03-12T20:03:23.000Z"
+last_activity: 2026-03-12 — Phase 3 Plan 02 complete
 progress:
   total_phases: 5
   completed_phases: 1
   total_plans: 7
-  completed_plans: 5
-  percent: 33
+  completed_plans: 6
+  percent: 43
 ---
 
 # Project State
@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-03-12)
 
 ## Current Position
 
-Phase: 2 of 5 (Codebase Scanner) — IN PROGRESS
-Plan: 2 of 3 in current phase (02-02 done)
-Status: Phase 2 Plan 02 complete — Claude Agent SDK scanning pipeline, prompts, scan command
-Last activity: 2026-03-12 — Phase 2 Plan 02 complete
+Phase: 3 of 5 (Article Generation) — IN PROGRESS
+Plan: 2 of 2 in current phase (03-02 done)
+Status: Phase 3 Plan 02 complete — generate command wired to feature map, filter by slug, ora spinner loop
+Last activity: 2026-03-12 — Phase 3 Plan 02 complete
 
-Progress: [███░░░░░░░] 33%
+Progress: [████░░░░░░] 43%
 
 ## Performance Metrics
 
@@ -77,6 +77,9 @@ Recent decisions affecting current work:
 - [Phase 02-02]: mergeFeatureMaps gives end_user audience priority in combined (mobile+dashboard) features — broader audience wins
 - [Phase 03-01]: Frontmatter is prepended programmatically by buildFrontmatter() — Claude returns body only, eliminating YAML formatting inconsistency
 - [Phase 03-01]: tools:[] in runGeneration() query() — text generation needs no file access, keeps turn count low
+- [Phase 03-02]: Sequential feature generation (not parallel) to respect Claude API rate limits
+- [Phase 03-02]: --features accepts slugs (not display names) — stable machine identifiers as public contract
+- [Phase 03-02]: Per-feature error isolation — failed++ then continue, process.exit(1) after full loop if any failed
 
 ### Pending Todos
 

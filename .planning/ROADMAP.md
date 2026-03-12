@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Config layer, shared types, file path contract, and project scaffolding
 - [ ] **Phase 2: Codebase Scanner** - Claude Code-powered feature detection from all three codebases
-- [ ] **Phase 3: Article Generation** - German-first support article authoring via Claude AI
+- [x] **Phase 3: Article Generation** - German-first support article authoring via Claude AI (completed 2026-03-12)
 - [ ] **Phase 4: Translation Pipeline** - DeepL translation with hash gating and glossary integration
 - [ ] **Phase 5: Pipeline Assembly and Manual Skill** - Full CLI orchestration, change detection, and manual article skill
 
@@ -62,7 +62,7 @@ Plans:
   2. Articles generated for mobile app features address end users; articles for dashboard features address club or company admins — content and vocabulary differ appropriately
   3. Running the generator twice on the same feature map produces identical article output (deterministic at temperature 0)
   4. Articles for enrollment or onboarding topics direct users to their local contact person rather than providing instructions
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] 03-01-PLAN.md — Generator module: prompt templates, frontmatter builder, article writer, SDK wrapper, and unit tests
@@ -99,6 +99,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete | 2026-03-12 |
 | 2. Codebase Scanner | 2/3 | In Progress|  |
-| 3. Article Generation | 1/2 | In Progress|  |
+| 3. Article Generation | 2/2 | Complete   | 2026-03-12 |
 | 4. Translation Pipeline | 0/TBD | Not started | - |
 | 5. Pipeline Assembly and Manual Skill | 0/TBD | Not started | - |
