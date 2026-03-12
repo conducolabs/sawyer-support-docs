@@ -11,8 +11,9 @@ export const generateCommand = new Command('generate')
     try {
       const _config = loadConfig();
       void options;
-    } catch {
-      // Config errors handled below
+    } catch (err) {
+      console.error((err as Error).message);
+      process.exit(1);
     }
     console.log('Generate command not yet implemented (Phase 3)');
     process.exit(0);

@@ -41,8 +41,11 @@ describe('buildSlug', () => {
     }
   });
 
-  it('strips umlaut characters — output contains no ä, ö, ü characters', () => {
-    const slug = buildSlug('Ubersicht');
+  it('converts German umlauts to ascii equivalents', () => {
+    expect(buildSlug('Übersicht')).toBe('uebersicht');
+    expect(buildSlug('Passwort zurücksetzen')).toBe('passwort-zuruecksetzen');
+    expect(buildSlug('Büro Öffnungszeiten')).toBe('buero-oeffnungszeiten');
+    const slug = buildSlug('Ärger mit Äpfeln');
     expect(slug).not.toMatch(/[äöüÄÖÜ]/);
     expect(slug).toMatch(/^[a-z0-9-]+$/);
   });
