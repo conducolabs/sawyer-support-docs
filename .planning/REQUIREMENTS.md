@@ -28,14 +28,14 @@
 
 ### Article Generation
 
-- [ ] **GEN-01**: System generates support articles in German as the primary/source language using Claude AI
-- [ ] **GEN-02**: System generates step-by-step guide articles (numbered instructions for how to do X)
-- [ ] **GEN-03**: System generates FAQ-style articles (question and answer pairs)
-- [ ] **GEN-04**: System generates troubleshooting articles (problem → cause → solution)
-- [ ] **GEN-05**: System generates feature overview articles (what X is and how it works)
-- [ ] **GEN-06**: Articles are audience-aware — different content for end users (mobile app) vs club/company admins (dashboard)
-- [ ] **GEN-07**: Generated articles include minimal frontmatter metadata (title, language)
-- [ ] **GEN-08**: Articles are written for technical support only — enrollment/onboarding topics direct users to their local contact person
+- [x] **GEN-01**: System generates support articles in German as the primary/source language using Claude AI
+- [x] **GEN-02**: System generates step-by-step guide articles (numbered instructions for how to do X)
+- [x] **GEN-03**: System generates FAQ-style articles (question and answer pairs)
+- [x] **GEN-04**: System generates troubleshooting articles (problem → cause → solution)
+- [x] **GEN-05**: System generates feature overview articles (what X is and how it works)
+- [x] **GEN-06**: Articles are audience-aware — different content for end users (mobile app) vs club/company admins (dashboard)
+- [x] **GEN-07**: Generated articles include minimal frontmatter metadata (title, language)
+- [x] **GEN-08**: Articles are written for technical support only — enrollment/onboarding topics direct users to their local contact person
 
 ### Translation
 
@@ -109,14 +109,14 @@
 | SCAN-05 | Phase 2 | Complete |
 | SCAN-06 | Phase 2 | Complete |
 | SCAN-07 | Phase 2 | Complete |
-| GEN-01 | Phase 3 | Pending |
-| GEN-02 | Phase 3 | Pending |
-| GEN-03 | Phase 3 | Pending |
-| GEN-04 | Phase 3 | Pending |
-| GEN-05 | Phase 3 | Pending |
-| GEN-06 | Phase 3 | Pending |
-| GEN-07 | Phase 3 | Pending |
-| GEN-08 | Phase 3 | Pending |
+| GEN-01 | Phase 3 | Complete |
+| GEN-02 | Phase 3 | Complete |
+| GEN-03 | Phase 3 | Complete |
+| GEN-04 | Phase 3 | Complete |
+| GEN-05 | Phase 3 | Complete |
+| GEN-06 | Phase 3 | Complete |
+| GEN-07 | Phase 3 | Complete |
+| GEN-08 | Phase 3 | Complete |
 | TRANS-01 | Phase 4 | Pending |
 | TRANS-02 | Phase 4 | Pending |
 | TRANS-03 | Phase 4 | Pending |
