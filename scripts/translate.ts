@@ -126,6 +126,9 @@ async function main() {
       return slug;
     }
 
+    // Track used target paths to detect collisions
+    const usedPaths = new Set<string>();
+
     let count = 0;
     for (const filePath of files) {
       const rel = relative(sourceDir, filePath); // e.g. app/konto/anmelden.md
@@ -138,13 +141,15 @@ async function main() {
       for (let i = 0; i < parts.length; i++) {
         const part = parts[i];
         if (i === parts.length - 1) {
-          // File name
+          // File name — translate using frontmatter title for uniqueness
           const ext = extname(part);
           const stem = basename(part, ext);
           if (stem === "index") {
             translatedParts.push("index.md");
           } else {
-            const translatedStem = await translateSlug(stem);
+            // Use frontmatter title to get a more specific translation
+            const translatedTitle = await translateText(frontmatter.title, target);
+            const translatedStem = doSlug(translatedTitle);
             translatedParts.push(translatedStem + ext);
           }
         } else {
@@ -153,8 +158,22 @@ async function main() {
         }
       }
 
-      const targetRel = translatedParts.join("/");
-      const targetPath = join(DOCS_ROOT, target.langField, targetRel);
+      let targetRel = translatedParts.join("/");
+      let targetPath = join(DOCS_ROOT, target.langField, targetRel);
+
+      // Handle path collisions by appending a suffix
+      if (usedPaths.has(targetPath)) {
+        const ext = extname(targetRel);
+        const base = targetRel.slice(0, -ext.length);
+        let suffix = 2;
+        while (usedPaths.has(join(DOCS_ROOT, target.langField, `${base}-${suffix}${ext}`))) {
+          suffix++;
+        }
+        targetRel = `${base}-${suffix}${ext}`;
+        targetPath = join(DOCS_ROOT, target.langField, targetRel);
+        console.log(`    ⚠ Collision resolved: ${targetRel}`);
+      }
+      usedPaths.add(targetPath);
 
       // Translate content
       const [translatedTitle, translatedSynopsis, translatedBody] =
